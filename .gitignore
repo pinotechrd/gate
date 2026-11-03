@@ -1,0 +1,23 @@
+# --- .NET --
+bin/
+obj/
+*.user
+*.suo
+.vs/
+# --- Node / Vite --
+node_modules/
+dist/
+*.tsbuildinfo
+*.local
+# --- Generated: Vite builds the SPA into the API's wwwroot (see docs/guia-gate.md, 
+backend/src/Gate.Api/wwwroot/
+# --- Publish output and deployment packages --
+publish/
+publish-tools/
+*.zip
+efbundle
+efbundle.exe
+# --- Editors and OS --
+.idea/
+.DS_Store
+Thumbs.db
