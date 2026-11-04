@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Gate.Api/Gate.Api.csproj" />
+  </Folder>
+</Solution>
