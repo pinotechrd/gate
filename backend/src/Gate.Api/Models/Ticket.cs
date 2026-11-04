@@ -11,6 +11,8 @@ public class Ticket
     public string Code { get; set; } = string.Empty;
     public DateTimeOffset IssuedAt { get; set; }
     public DateTimeOffset AdmittedAt { get; set; }
+
+    public string? GateName { get; set; }
     public string NormalizerCode(string code) => code.Trim().ToUpperInvariant();
 }
 
