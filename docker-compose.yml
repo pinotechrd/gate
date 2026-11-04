@@ -1,0 +1,25 @@
+
+# Local infrastructure for Gate. Part 1 only needs PostgreSQL.
+# Host port 55432 (not 5432) avoids clashing with a PostgreSQL already installed on
+# override it with: POSTGRES_PORT=5433 docker compose up -d
+
+services:
+  postgres:
+    image: postgres:17.11
+    container_name: gate-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: gate
+      POSTGRES_PASSWORD: gate_dev_password
+      POSTGRES_DB: gate_db
+    ports:
+      - "${POSTGRES_PORT:-55432}:5432"
+    volumes:
+      - gate-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gate -d gate_db"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+volumes:
+  gate-postgres-data:

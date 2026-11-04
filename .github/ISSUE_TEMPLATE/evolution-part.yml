@@ -1,12 +1,11 @@
-
 name: Evolution part
 description: Plan one part of Gate's evolution (one issue, one feature branch, one pull request).
 title: "Part N: <topic>"
-labels: ["Evolution"]
+labels: ["evolution"]
 body:
   - type: markdown
-    attibutes:
-      value:  |
+    attributes:
+      value: |
         One issue per part of the guide (`docs/guia-gate.md`).
         The part is built on its own branch `feature/part-N-<topic>`, created from `develop`,
         with **one commit per step**. It is merged into `develop` with a merge commit (no squash),
@@ -23,44 +22,36 @@ body:
     id: branch
     attributes:
       label: Feature branch
-      description: Create from develop. Never deleted after merging, so readers can check it out.
+      description: Created from develop. Never deleted after merging, so readers can check it out.
       placeholder: "feature/part-1-monolith"
     validations:
       required: true
   - type: textarea
     id: problem
     attributes:
-      label: problem
+      label: Problem
       description: What hurts in the current state of the project and why this part exists.
     validations:
       required: true
   - type: textarea
     id: steps
     attributes:
-      label: steps
-      description: One Checkbox per step of the guide. Each step becomes exactly one commit.
-    validations:
-      required: true
-  - type: textarea
-    id: result
-    attributes:
-      label: result
-      description: What is the expected result after completing this part.
+      label: Steps
+      description: One checkbox per step of the guide. Each step becomes exactly one commit.
       value: |
-        - [] N.1 ...
-        - [] N.2 ...
+        - [ ] N.1 ...
+        - [ ] N.2 ...
     validations:
       required: true
   - type: textarea
     id: done
     attributes:
       label: Definition of done
-      value : |
-        - [] Every step verified as described in its "Verification" section
-        - [] One commit per step, using the suggested message.
-        - [] Pull request into develop merged with a merge commit (no squash, no rebase).
-        - [] Release pull request develop -> main merged.
-        - [] Tag `part-N` pushed and GitHub release created.
-      validations:
-        required: true
-        
+      value: |
+        - [ ] Every step verified as described in its "Verificación" section
+        - [ ] One commit per step, using the suggested message
+        - [ ] Pull request into develop merged with a merge commit (no squash, no rebase)
+        - [ ] Release pull request develop -> main merged
+        - [ ] Tag part-N pushed and GitHub release created
+    validations:
+      required: true
