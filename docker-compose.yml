@@ -2,7 +2,6 @@
 # Local infrastructure for Gate. Part 1 only needs PostgreSQL.
 # Host port 55432 (not 5432) avoids clashing with a PostgreSQL already installed on
 # override it with: POSTGRES_PORT=5433 docker compose up -d
-
 services:
   postgres:
     image: postgres:17.11
