@@ -10,7 +10,7 @@ public class Ticket
     public VenueEvent? Event { get; set; }
     public string Code { get; set; } = string.Empty;
     public DateTimeOffset IssuedAt { get; set; }
-    public DateTimeOffset AdmittedAt { get; set; }
+    public DateTimeOffset? AdmittedAt { get; set; }
 
     public string? GateName { get; set; }
     public static string NormalizerCode(string code) => code.Trim().ToUpperInvariant();
